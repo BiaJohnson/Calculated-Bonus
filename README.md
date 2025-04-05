@@ -1,27 +1,40 @@
 # Calculated-Bonus
-A financial institution provides professional services to banks and claims charges from the customers based on the number of man-days provided. Internally, it has set a scheme to motivate and reward staff to meet and exceed targeted billable utilization and revenues by paying a bonus for each day claimed from customers in excess of a threshold target.
 
-Write one or more functions to read the billable days entered at runtime by an employee and return the bonus he/she has obtained in that quarter.
+## Overview
+This Python program calculates the **quarterly incentive bonus** for employees of a financial institution based on the number of **billable man-days** provided. The organization incentivizes employees to exceed a set threshold of billable days by awarding a **progressively increasing bonus** based on the number of extra days worked.
 
-This quarterly scheme is calculated with a threshold target of 32 days per quarter, and the incentive payment for each billable day in excess of such threshold target is shown as follows:
+## Objective
+Prompt the user to enter the number of **billable days** for the quarter.
+Calculate the bonus according to a progressive scheme.
+Return and display the total bonus amount.
 
-Days	Bonus
-0 to 32 days	Zero
-33 to 40 days	$325 per billable day
-41 to 48 days	$550 per billable day
-Greater than 48 days	$600 per billable day
-| Days  | Bonus |
-|-----------|-----------|
-| 0 to 32 days | $325 per billable day  |
-| 41 to 48 days | $550 per billable day |
-| Greater than 48 days | $600 per billable day|
+## Bonus Scheme
+The incentive is calculated **progressively**, meaning different bonus rates apply to specific ranges of extra days beyond the 32-day threshold.
+| Billable Days         | Bonus Rate              |
+|-----------------------|-------------------------|
+| 0 to 32               | $0 per day              |
+| 33 to 40              | $325 per day            |
+| 41 to 48              | $550 per day            |
+| Greater than 48       | $600 per day            |
 
-Please note that incentive payment is calculated progressively. As an example, if an employee reached total billable days of 45 in a quarter, his/her incentive payment is computed as follows:
-32*0 + 8*325 + 5*550 = 5350
+### Example Calculation
 
-Examples
+For **45 billable days**, the bonus is calculated as:
+First 32 days: no bonus
+Next 8 days (33–40): 8 × $325 = $2,600 
+Next 5 days (41–45): 5 × $550 = $2,750 
+*Total Bonus = $2,600 + $2,750 = $5,350
+
+## Examples
+```python
 bonus(15) ➞ 0
- 
 bonus(37) ➞ 1625
- 
-bonus(50) ➞ 8200
+bonus(50) ➞ 8200*
+```
+
+## Skills Demonstrated
+
+-	Conditional logic and progressive calculations
+-	User input handling (optional)
+-	Function creation and return values
+- Practical application of incentive logic
